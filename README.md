@@ -1,4 +1,4 @@
-# swagger-java-client
+# Meltwater Java SDK
 
 ## Requirements
 
