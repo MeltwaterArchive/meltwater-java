@@ -4,12 +4,12 @@ All URIs are relative to *https://api.meltwater.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getV1Searches**](SearchesApi.md#getV1Searches) | **GET** /v1/searches | List your saved searches.
+[**getAllSearches**](SearchesApi.md#getAllSearches) | **GET** /v1/searches | List your saved searches.
 
 
-<a name="getV1Searches"></a>
-# **getV1Searches**
-> SearchesCollection getV1Searches(userKey, authorization)
+<a name="getAllSearches"></a>
+# **getAllSearches**
+> SearchesCollection getAllSearches(userKey, authorization)
 
 List your saved searches.
 
@@ -26,10 +26,10 @@ SearchesApi apiInstance = new SearchesApi();
 String userKey = "userKey_example"; // String | The `user_key` from [developer.meltwater.io](https://developer.meltwater.io/admin/applications/).
 String authorization = "authorization_example"; // String | `Oauth Access Token`    OAuth access token (RFC 6749). Must contain the access token type `Bearer`  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO...
 try {
-    SearchesCollection result = apiInstance.getV1Searches(userKey, authorization);
+    SearchesCollection result = apiInstance.getAllSearches(userKey, authorization);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling SearchesApi#getV1Searches");
+    System.err.println("Exception when calling SearchesApi#getAllSearches");
     e.printStackTrace();
 }
 ```
