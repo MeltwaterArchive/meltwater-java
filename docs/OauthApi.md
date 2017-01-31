@@ -4,12 +4,12 @@ All URIs are relative to *https://api.meltwater.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**postOauth2Token**](OauthApi.md#postOauth2Token) | **POST** /oauth2/token | Create an access token
+[**createToken**](OauthApi.md#createToken) | **POST** /oauth2/token | Create an access token
 
 
-<a name="postOauth2Token"></a>
-# **postOauth2Token**
-> OAuth2Token postOauth2Token(userKey, authorization, grantType, scope)
+<a name="createToken"></a>
+# **createToken**
+> OAuth2Token createToken(userKey, authorization, grantType, scope)
 
 Create an access token
 
@@ -28,10 +28,10 @@ String authorization = "authorization_example"; // String | `client_id:client_se
 String grantType = "grantType_example"; // String | OAuth2 grant type, use `client_credentials`
 String scope = "scope_example"; // String | OAuth2 scope, use `search`
 try {
-    OAuth2Token result = apiInstance.postOauth2Token(userKey, authorization, grantType, scope);
+    OAuth2Token result = apiInstance.createToken(userKey, authorization, grantType, scope);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling OauthApi#postOauth2Token");
+    System.err.println("Exception when calling OauthApi#createToken");
     e.printStackTrace();
 }
 ```
