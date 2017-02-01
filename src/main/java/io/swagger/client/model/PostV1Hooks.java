@@ -35,7 +35,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Creates a hook for one of your predefined searches.
  */
 @ApiModel(description = "Creates a hook for one of your predefined searches.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T10:07:41.053+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-01T09:59:57.302+01:00")
 public class PostV1Hooks   {
   @SerializedName("target_url")
   private String targetUrl = null;
