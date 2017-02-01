@@ -38,7 +38,7 @@ import java.util.List;
  * List all hooks.     Delivers all previously generated hooks.    Requires an OAuth access token.
  */
 @ApiModel(description = "List all hooks.     Delivers all previously generated hooks.    Requires an OAuth access token.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T10:07:41.053+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-01T09:59:57.302+01:00")
 public class HooksCollection   {
   @SerializedName("hooks")
   private List<Hook> hooks = new ArrayList<Hook>();
