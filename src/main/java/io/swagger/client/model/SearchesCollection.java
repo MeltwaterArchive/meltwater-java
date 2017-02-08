@@ -38,7 +38,7 @@ import java.util.List;
  * List your saved searches.
  */
 @ApiModel(description = "List your saved searches.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-01T09:59:57.302+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T08:01:16.852-06:00")
 public class SearchesCollection   {
   @SerializedName("searches")
   private List<Search> searches = new ArrayList<Search>();
