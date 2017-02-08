@@ -1,9 +1,9 @@
 # Meltwater Java SDK
-       
-_**Disclaimer: This client was generated automatically based on our Swagger Spec. We are sharing it for purely demonstrative purposes. We hope it it helps. If you have any comments please open an issue, we would love to hear from you!**_     
 
-The Meltwater API provides the needed resources for Meltwater clients to create & delete REST Hooks and stream Meltwater search results to their specified destination.       
-       
+_**Disclaimer: This client was generated automatically based on our Swagger Spec. We are sharing it for purely demonstrative purposes. We hope it it helps. If you have any comments please open an issue, we would love to hear from you!**_
+
+The Meltwater API provides the needed resources for Meltwater clients to create & delete REST Hooks and stream Meltwater search results to their specified destination.
+
 This SDK is automatically generated using [Swagger Codegen](https://github.com/swagger-api/swagger-codegen).
 
 ## Requirements
@@ -77,7 +77,7 @@ public class ClientsApiExample {
     public static void main(String[] args) {
         
         ClientsApi apiInstance = new ClientsApi();
-        String userKey = "userKey_example"; // String | The `user_key` from [developer.meltwater.io](https://developer.meltwater.io/admin/applications/).
+        String userKey = "userKey_example"; // String | The `user_key` from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/).
         String authorization = "authorization_example"; // String | `email`:`password`    Basic Auth (RFC2617) credentials. Must contain the realm `Basic` followed by a  Base64-encoded `email`:`password` pair using your Meltwater credentials.    #### Example:        Basic bXlfZW1haWxAZXhhbXJzZWNyZXQ=
         try {
             ClientCredentials result = apiInstance.createClientCredentials(userKey, authorization);
@@ -93,7 +93,7 @@ public class ClientsApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.meltwater.io*
+All URIs are relative to *https://api.meltwater.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

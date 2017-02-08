@@ -35,7 +35,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Create an OAuth2 access token based on the provided &#x60;client_id&#x60; and &#x60;client_secret&#x60;
  */
 @ApiModel(description = "Create an OAuth2 access token based on the provided `client_id` and `client_secret`")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-01T09:59:57.302+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T08:01:16.852-06:00")
 public class OAuth2Token   {
   @SerializedName("access_token")
   private String accessToken = null;
