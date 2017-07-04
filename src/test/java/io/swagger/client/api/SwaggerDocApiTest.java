@@ -14,8 +14,6 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.model.ErrorsCollection;
-import io.swagger.client.model.SearchesCollection;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -25,27 +23,26 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for SearchesApi
+ * API tests for SwaggerDocApi
  */
 @Ignore
-public class SearchesApiTest {
+public class SwaggerDocApiTest {
 
-    private final SearchesApi api = new SearchesApi();
+    private final SwaggerDocApi api = new SwaggerDocApi();
 
     
     /**
-     * List your saved searches.
+     * Meltwater API Swagger Spec
      *
-     * List your saved searches.
+     * Get the complete Swagger Spec that describes all Meltwater API endpoints.
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getAllSearchesTest() throws ApiException {
+    public void getCompleteSwaggerSpecTest() throws ApiException {
         String userKey = null;
-        String authorization = null;
-        SearchesCollection response = api.getAllSearches(userKey, authorization);
+        api.getCompleteSwaggerSpec(userKey);
 
         // TODO: test validations
     }

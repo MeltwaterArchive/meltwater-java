@@ -17,40 +17,53 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Search;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * List your saved searches.
+ * Creates a hook for one of your predefined searches.
  */
-@ApiModel(description = "List your saved searches.")
+@ApiModel(description = "Creates a hook for one of your predefined searches.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-04T11:33:45.947+02:00")
-public class SearchesCollection {
-  @SerializedName("searches")
-  private List<Search> searches = new ArrayList<Search>();
+public class PostV2Hooks {
+  @SerializedName("target_url")
+  private String targetUrl = null;
 
-  public SearchesCollection searches(List<Search> searches) {
-    this.searches = searches;
-    return this;
-  }
+  @SerializedName("search_id")
+  private Integer searchId = null;
 
-  public SearchesCollection addSearchesItem(Search searchesItem) {
-    this.searches.add(searchesItem);
+  public PostV2Hooks targetUrl(String targetUrl) {
+    this.targetUrl = targetUrl;
     return this;
   }
 
    /**
-   * Get searches
-   * @return searches
+   * Target URL to send article results
+   * @return targetUrl
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<Search> getSearches() {
-    return searches;
+  @ApiModelProperty(example = "null", required = true, value = "Target URL to send article results")
+  public String getTargetUrl() {
+    return targetUrl;
   }
 
-  public void setSearches(List<Search> searches) {
-    this.searches = searches;
+  public void setTargetUrl(String targetUrl) {
+    this.targetUrl = targetUrl;
+  }
+
+  public PostV2Hooks searchId(Integer searchId) {
+    this.searchId = searchId;
+    return this;
+  }
+
+   /**
+   * Search ID
+   * @return searchId
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "Search ID")
+  public Integer getSearchId() {
+    return searchId;
+  }
+
+  public void setSearchId(Integer searchId) {
+    this.searchId = searchId;
   }
 
 
@@ -62,22 +75,24 @@ public class SearchesCollection {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SearchesCollection searchesCollection = (SearchesCollection) o;
-    return Objects.equals(this.searches, searchesCollection.searches);
+    PostV2Hooks postV2Hooks = (PostV2Hooks) o;
+    return Objects.equals(this.targetUrl, postV2Hooks.targetUrl) &&
+        Objects.equals(this.searchId, postV2Hooks.searchId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(searches);
+    return Objects.hash(targetUrl, searchId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SearchesCollection {\n");
+    sb.append("class PostV2Hooks {\n");
     
-    sb.append("    searches: ").append(toIndentedString(searches)).append("\n");
+    sb.append("    targetUrl: ").append(toIndentedString(targetUrl)).append("\n");
+    sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,10 +1,4 @@
-# Meltwater Java SDK
-
-_**Disclaimer: This client was generated automatically based on our Swagger Spec. We are sharing it for purely demonstrative purposes. We hope it it helps. If you have any comments please open an issue, we would love to hear from you!**_
-
-The Meltwater API provides the needed resources for Meltwater clients to create & delete REST Hooks and stream Meltwater search results to their specified destination.
-
-This SDK is automatically generated using [Swagger Codegen](https://github.com/swagger-api/swagger-codegen).
+# swagger-java-client
 
 ## Requirements
 
@@ -34,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>io.swagger</groupId>
     <artifactId>swagger-java-client</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -44,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.swagger:swagger-java-client:1.0.0"
+compile "io.swagger:swagger-java-client:2.0.0"
 ```
 
 ### Others
@@ -55,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/swagger-java-client-1.0.0.jar
+* target/swagger-java-client-2.0.0.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -97,13 +91,16 @@ All URIs are relative to *https://api.meltwater.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ClientsApi* | [**createClientCredentials**](docs/ClientsApi.md#createClientCredentials) | **POST** /v1/clients | Register new client
-*ClientsApi* | [**deleteClientCredentials**](docs/ClientsApi.md#deleteClientCredentials) | **DELETE** /v1/clients/{client_id} | Delete client.
-*HooksApi* | [**createHook**](docs/HooksApi.md#createHook) | **POST** /v1/hooks | Creates a hook for one of your predefined searches.
-*HooksApi* | [**deleteHook**](docs/HooksApi.md#deleteHook) | **DELETE** /v1/hooks/{id} | Delete an existing hook.
-*HooksApi* | [**getAllHooks**](docs/HooksApi.md#getAllHooks) | **GET** /v1/hooks | List all hooks.
-*OauthApi* | [**createToken**](docs/OauthApi.md#createToken) | **POST** /oauth2/token | Create an access token
-*SearchesApi* | [**getAllSearches**](docs/SearchesApi.md#getAllSearches) | **GET** /v1/searches | List your saved searches.
+*ClientsApi* | [**createClientCredentials**](docs/ClientsApi.md#createClientCredentials) | **POST** /v2/clients | Register new client
+*ClientsApi* | [**deleteClientCredentials**](docs/ClientsApi.md#deleteClientCredentials) | **DELETE** /v2/clients/{client_id} | Delete client.
+*HooksApi* | [**createHook**](docs/HooksApi.md#createHook) | **POST** /v2/hooks | Creates a hook for one of your predefined searches.
+*HooksApi* | [**deleteHook**](docs/HooksApi.md#deleteHook) | **DELETE** /v2/hooks/{hook_id} | Delete an existing hook.
+*HooksApi* | [**getAllHooks**](docs/HooksApi.md#getAllHooks) | **GET** /v2/hooks | List all hooks.
+*Oauth2Api* | [**createToken**](docs/Oauth2Api.md#createToken) | **POST** /oauth2/token | Create an access token
+*SchemasApi* | [**getEditorialStreamingJsonSchema**](docs/SchemasApi.md#getEditorialStreamingJsonSchema) | **GET** /v2/schemas/editorial_streaming.json | Editorial Streaming JSON schema
+*SchemasApi* | [**getSocialStreamingJsonSchema**](docs/SchemasApi.md#getSocialStreamingJsonSchema) | **GET** /v2/schemas/social_streaming.json | Social Streaming JSON schema
+*SearchesApi* | [**getAllSearches**](docs/SearchesApi.md#getAllSearches) | **GET** /v2/searches | List your saved searches.
+*SwaggerDocApi* | [**getCompleteSwaggerSpec**](docs/SwaggerDocApi.md#getCompleteSwaggerSpec) | **GET** /v2/swagger_doc | Meltwater API Swagger Spec
 
 
 ## Documentation for Models
@@ -114,7 +111,7 @@ Class | Method | HTTP request | Description
  - [Hook](docs/Hook.md)
  - [HooksCollection](docs/HooksCollection.md)
  - [OAuth2Token](docs/OAuth2Token.md)
- - [PostV1Hooks](docs/PostV1Hooks.md)
+ - [PostV2Hooks](docs/PostV2Hooks.md)
  - [Search](docs/Search.md)
  - [SearchesCollection](docs/SearchesCollection.md)
 
@@ -126,7 +123,7 @@ Authentication schemes defined for the API:
 
 ## Recommendation
 
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issue.
+It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 
