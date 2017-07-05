@@ -14,8 +14,7 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.model.ErrorsCollection;
-import io.swagger.client.model.SearchesCollection;
+import io.swagger.client.model.OAuth2Token;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -25,27 +24,29 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for SearchesApi
+ * API tests for Oauth2Api
  */
 @Ignore
-public class SearchesApiTest {
+public class Oauth2ApiTest {
 
-    private final SearchesApi api = new SearchesApi();
+    private final Oauth2Api api = new Oauth2Api();
 
     
     /**
-     * List your saved searches.
+     * Create an access token
      *
-     * List your saved searches.
+     * Create an OAuth2 access token based on the provided &#x60;client_id&#x60; and &#x60;client_secret&#x60;.  #### Appendix    The Base64-encoded &#x60;client_id&#x60;:&#x60;client_secret&#x60; string can be generated in a  terminal with following command:        $ echo -n \&quot;your_client_id:your_client_secret\&quot; | base64    &lt;i&gt;You will need &#x60;base64&#x60; installed.&lt;/i&gt;
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getAllSearchesTest() throws ApiException {
+    public void createTokenTest() throws ApiException {
         String userKey = null;
         String authorization = null;
-        SearchesCollection response = api.getAllSearches(userKey, authorization);
+        String grantType = null;
+        String scope = null;
+        OAuth2Token response = api.createToken(userKey, authorization, grantType, scope);
 
         // TODO: test validations
     }

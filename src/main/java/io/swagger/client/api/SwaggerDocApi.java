@@ -27,8 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.ErrorsCollection;
-import io.swagger.client.model.SearchesCollection;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -36,14 +34,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SearchesApi {
+public class SwaggerDocApi {
     private ApiClient apiClient;
 
-    public SearchesApi() {
+    public SwaggerDocApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public SearchesApi(ApiClient apiClient) {
+    public SwaggerDocApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -55,20 +53,18 @@ public class SearchesApi {
         this.apiClient = apiClient;
     }
 
-    /* Build call for getAllSearches */
-    private com.squareup.okhttp.Call getAllSearchesCall(String userKey, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for getCompleteSwaggerSpec */
+    private com.squareup.okhttp.Call getCompleteSwaggerSpecCall(String userKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/searches".replaceAll("\\{format\\}","json");
+        String localVarPath = "/v2/swagger_doc".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (userKey != null)
         localVarHeaderParams.put("user-key", apiClient.parameterToString(userKey));
-        if (authorization != null)
-        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -101,20 +97,15 @@ public class SearchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllSearchesValidateBeforeCall(String userKey, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getCompleteSwaggerSpecValidateBeforeCall(String userKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'userKey' is set
         if (userKey == null) {
-            throw new ApiException("Missing the required parameter 'userKey' when calling getAllSearches(Async)");
-        }
-        
-        // verify the required parameter 'authorization' is set
-        if (authorization == null) {
-            throw new ApiException("Missing the required parameter 'authorization' when calling getAllSearches(Async)");
+            throw new ApiException("Missing the required parameter 'userKey' when calling getCompleteSwaggerSpec(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = getAllSearchesCall(userKey, authorization, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCompleteSwaggerSpecCall(userKey, progressListener, progressRequestListener);
         return call;
 
         
@@ -124,42 +115,36 @@ public class SearchesApi {
     }
 
     /**
-     * List your saved searches.
-     * List your saved searches.
+     * Meltwater API Swagger Spec
+     * Get the complete Swagger Spec that describes all Meltwater API endpoints.
      * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/). (required)
-     * @param authorization &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO... (required)
-     * @return SearchesCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchesCollection getAllSearches(String userKey, String authorization) throws ApiException {
-        ApiResponse<SearchesCollection> resp = getAllSearchesWithHttpInfo(userKey, authorization);
-        return resp.getData();
+    public void getCompleteSwaggerSpec(String userKey) throws ApiException {
+        getCompleteSwaggerSpecWithHttpInfo(userKey);
     }
 
     /**
-     * List your saved searches.
-     * List your saved searches.
+     * Meltwater API Swagger Spec
+     * Get the complete Swagger Spec that describes all Meltwater API endpoints.
      * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/). (required)
-     * @param authorization &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO... (required)
-     * @return ApiResponse&lt;SearchesCollection&gt;
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchesCollection> getAllSearchesWithHttpInfo(String userKey, String authorization) throws ApiException {
-        com.squareup.okhttp.Call call = getAllSearchesValidateBeforeCall(userKey, authorization, null, null);
-        Type localVarReturnType = new TypeToken<SearchesCollection>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+    public ApiResponse<Void> getCompleteSwaggerSpecWithHttpInfo(String userKey) throws ApiException {
+        com.squareup.okhttp.Call call = getCompleteSwaggerSpecValidateBeforeCall(userKey, null, null);
+        return apiClient.execute(call);
     }
 
     /**
-     * List your saved searches. (asynchronously)
-     * List your saved searches.
+     * Meltwater API Swagger Spec (asynchronously)
+     * Get the complete Swagger Spec that describes all Meltwater API endpoints.
      * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/). (required)
-     * @param authorization &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO... (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllSearchesAsync(String userKey, String authorization, final ApiCallback<SearchesCollection> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCompleteSwaggerSpecAsync(String userKey, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -180,9 +165,8 @@ public class SearchesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllSearchesValidateBeforeCall(userKey, authorization, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchesCollection>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+        com.squareup.okhttp.Call call = getCompleteSwaggerSpecValidateBeforeCall(userKey, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
         return call;
     }
 }

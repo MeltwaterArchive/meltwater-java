@@ -4,8 +4,8 @@ All URIs are relative to *https://api.meltwater.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createClientCredentials**](ClientsApi.md#createClientCredentials) | **POST** /v1/clients | Register new client
-[**deleteClientCredentials**](ClientsApi.md#deleteClientCredentials) | **DELETE** /v1/clients/{client_id} | Delete client.
+[**createClientCredentials**](ClientsApi.md#createClientCredentials) | **POST** /v2/clients | Register new client
+[**deleteClientCredentials**](ClientsApi.md#deleteClientCredentials) | **DELETE** /v2/clients/{client_id} | Delete client.
 
 
 <a name="createClientCredentials"></a>
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Register new client
 
-Register new client     Creates a new pair of client credentials (&#x60;client_id&#x60;/&#x60;client_secret&#x60; pair).  Requires your Meltwater credentials (&#x60;email&#x60;:&#x60;password&#x60;) to authenticate.   #### Appendix    The Base64-encoded &#x60;email&#x60;:&#x60;password&#x60; string can be generated in a terminal  with following command:        $ echo -n \&quot;your_email@your_domain.com:your_secret_password\&quot; | base64    &lt;i&gt;You will need &#x60;base64&#x60; installed.&lt;/i&gt;
+Register new client             Creates a new pair of client credentials (&#x60;client_id&#x60;/&#x60;client_secret&#x60;          pair). Requires your Meltwater credentials (&#x60;email&#x60;:&#x60;password&#x60;)          to authenticate.           #### Appendix    The Base64-encoded &#x60;email&#x60;:&#x60;password&#x60; string can be generated in a terminal  with following command:        $ echo -n \&quot;your_email@your_domain.com:your_secret_password\&quot; | base64    &lt;i&gt;You will need &#x60;base64&#x60; installed.&lt;/i&gt;
 
 ### Example
 ```java
@@ -61,7 +61,7 @@ No authorization required
 
 Delete client.
 
-Delete client.    Deletes your current client credentials consisting of  client_id and client_secret. After calling this resource, you will not be able  to use the Meltwater API unless you create a new set of client credentials!  Requires your Meltwater credentials (&#x60;email&#x60;:&#x60;password&#x60;) to authenticate.   #### Appendix    The Base64-encoded &#x60;email&#x60;:&#x60;password&#x60; string can be generated in a terminal  with following command:        $ echo -n \&quot;your_email@your_domain.com:your_secret_password\&quot; | base64    &lt;i&gt;You will need &#x60;base64&#x60; installed.&lt;/i&gt;
+Delete client.    Deletes your current client credentials consisting                 of client_id and client_secret. After calling this resource,                  you will not be able to use the Meltwater API unless you create                  a new set of client credentials! Requires your Meltwater                  credentials (&#x60;email&#x60;:&#x60;password&#x60;) to authenticate.           #### Appendix    The Base64-encoded &#x60;email&#x60;:&#x60;password&#x60; string can be generated in a terminal  with following command:        $ echo -n \&quot;your_email@your_domain.com:your_secret_password\&quot; | base64    &lt;i&gt;You will need &#x60;base64&#x60; installed.&lt;/i&gt;
 
 ### Example
 ```java

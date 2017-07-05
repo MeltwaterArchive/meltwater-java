@@ -14,8 +14,6 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.model.ErrorsCollection;
-import io.swagger.client.model.SearchesCollection;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -25,27 +23,42 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for SearchesApi
+ * API tests for SchemasApi
  */
 @Ignore
-public class SearchesApiTest {
+public class SchemasApiTest {
 
-    private final SearchesApi api = new SearchesApi();
+    private final SchemasApi api = new SchemasApi();
 
     
     /**
-     * List your saved searches.
+     * Editorial Streaming JSON schema
      *
-     * List your saved searches.
+     * Get the JSON schema describing the layout of Editorial Streaming documents.
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getAllSearchesTest() throws ApiException {
+    public void getEditorialStreamingJsonSchemaTest() throws ApiException {
         String userKey = null;
-        String authorization = null;
-        SearchesCollection response = api.getAllSearches(userKey, authorization);
+        api.getEditorialStreamingJsonSchema(userKey);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Social Streaming JSON schema
+     *
+     * Get the JSON schema describing the layout of Social Streaming documents.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getSocialStreamingJsonSchemaTest() throws ApiException {
+        String userKey = null;
+        api.getSocialStreamingJsonSchema(userKey);
 
         // TODO: test validations
     }

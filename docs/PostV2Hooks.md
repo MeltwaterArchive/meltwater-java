@@ -1,5 +1,5 @@
 
-# PostV1Hooks
+# PostV2Hooks
 
 ## Properties
 Name | Type | Description | Notes
