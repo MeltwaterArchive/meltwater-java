@@ -1,3 +1,7 @@
+# Deprecation Notice
+
+This project is no longer actively maintained. If you need to create a client library for any of the Meltwater APIs, please refer to the OpenAPI specs of the respective API at [developer.meltwater.com](https://developer.meltwater.com/). From those OpenAPI specs you can generate the client yourself.
+
 # Meltwater Java SDK
 
 _**Disclaimer: This client was generated automatically based on our Swagger Spec. We are sharing it for purely demonstrative purposes. We hope it it helps. If you have any comments please open an issue, we would love to hear from you!**_
